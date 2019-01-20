@@ -1,67 +1,42 @@
-﻿using System;
-using TextualRealityExperienceEngine.GameEngine;
+﻿using TextualRealityExperienceEngine.EscapeGameShared;
 using TextualRealityExperienceEngine.GameEngine.Interfaces;
-using TextualRealityExperienceEngine.GameEngine.Synonyms;
 
-namespace TextualRealityExperienceEngine.EscapeGameLibrary.IceDungeon
+namespace TextualRealityExperienceEngine.Game.IceDungeon
 {
-    
-    class IceDungeon : Room
-    {    
-        public IceDungeon(string name, string description, IGame game) : base(name, description, game)
-        {
-           
-        }
-
-        public override string ProcessCommand(ICommand command)
-        {
-            if (command.ProfanityDetected)
-            {
-                return "There is no need to be rude.";
-            }
-            
-            switch (command.Verb)
-            {                   
-                case VerbCodes.Look:
-                    switch (command.Noun)
-                    {                       
-                        case "doormat":
-                            return "It's a doormat where people wipe their feet. On it is written 'There is no place like 10.0.0.1'.";
-                    }
-
-                    break;
-               
-                case VerbCodes.NoCommand:
-                    break;
-                case VerbCodes.Go:
-                    break;
-                case VerbCodes.Drop:
-                    break;
-                case VerbCodes.Take:
-                    break;
-                case VerbCodes.Use:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            var reply = base.ProcessCommand(command);
-            return reply;
-        }
-    }
-    
-    public class IceDungeonGame : Game
+    public class IceDungeonGame : IEscapeGame
     {
-        private readonly IceDungeon _iceDungeon;
-        
+        private IceDungeon _iceDungeon;
+        public IGame Game { get; private set; }
+
         public IceDungeonGame()
         {
-            Prologue = Prologue;
+            InitializeGame();
+        }
+        
+        public void InitializeGame()
+        {
+            Game = new GameEngine.Game();
+            
+            InitializeGameContentManagement();
 
-            _iceDungeon = new IceDungeon("Dungeon", "You are sitting in a very cold dungeon", this);
-           
-            StartRoom = _iceDungeon;
-            CurrentRoom = _iceDungeon;
+            Game.Prologue = Game.ContentManagement.RetrieveContentItem("Prologue");
+            _iceDungeon = new IceDungeon(Game);
+
+            Game.Parser.EnableProfanityFilter = true;
+            Game.StartRoom = _iceDungeon;
+            Game.CurrentRoom = _iceDungeon;
+
+            Game.Parser.Nouns.Add("doormat", "doormat");
+            Game.Parser.Nouns.Add("mat", "doormat");
+         }
+
+        private void InitializeGameContentManagement()
+        {
+            Game.ContentManagement.AddContentItem("HelpText", "Your aim is to find the treasure that is hidden somewhere in the house. \r\nYou need to type commands into the game to control the player.");
+            Game.ContentManagement.AddContentItem("AreYouSure", "Are you sure? (y/n) : ");
+            Game.ContentManagement.AddContentItem("ExitMessage", "Have it your way.. You spontaneously combust and depart this mortal coil in a puff of smoke....");            
+            Game.ContentManagement.AddContentItem("Prologue", "This is the CM prologue.");
+            
         }
     }
 }

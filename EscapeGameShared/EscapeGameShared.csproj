@@ -2,15 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>TextualRealityExperienceEngine.Game.IceDungeon</RootNamespace>
+        <AssemblyName>EscapeGameShared</AssemblyName>
+        <RootNamespace>TextualRealityExperienceEngine.EscapeGameShared</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="TextualRealityExperienceEngine" Version="1.0.2" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\EscapeGameShared\EscapeGameShared.csproj" />
     </ItemGroup>
 
 </Project>

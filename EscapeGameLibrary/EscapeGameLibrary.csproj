@@ -2,11 +2,16 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>TextualRealityExperienceEngine.GameEngine.EscapeGameTestHarness</RootNamespace>
+        <RootNamespace>TextualRealityExperienceEngine.GameEngine.EscapeGameLibrary</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="TextualRealityExperienceEngine" Version="1.0.1" />
+      <PackageReference Include="TextualRealityExperienceEngine" Version="1.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EscapeGameShared\EscapeGameShared.csproj" />
+      <ProjectReference Include="..\IceDungeon\IceDungeon.csproj" />
     </ItemGroup>
 
 </Project>

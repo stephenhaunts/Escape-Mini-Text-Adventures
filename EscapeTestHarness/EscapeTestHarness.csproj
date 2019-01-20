@@ -3,11 +3,12 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>TextualRealityExperienceEngine.GameEngine.EscapeGameLibrary</RootNamespace>
+        <RootNamespace>TextualRealityExperienceEngine.EscapeTestHarness</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\EscapeGameLibrary\EscapeGameLibrary.csproj" />
+      <ProjectReference Include="..\IceDungeon\IceDungeon.csproj" />
     </ItemGroup>
 
 </Project>
