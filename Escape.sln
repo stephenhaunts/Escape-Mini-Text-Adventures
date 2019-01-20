@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeGameLibrary", "EscapeGameLibrary\EscapeGameLibrary.csproj", "{74AF5B78-BA43-42E0-B444-3DC014118112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeTestHarness", "EscapeTestHarness\EscapeTestHarness.csproj", "{ED55296A-E3BA-4040-ADB9-05D5643EB34C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{79055998-C028-4F1C-8E31-4186FD36EB8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E2F33D14-5872-4AAA-82D3-9809F5DB40B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74AF5B78-BA43-42E0-B444-3DC014118112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74AF5B78-BA43-42E0-B444-3DC014118112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74AF5B78-BA43-42E0-B444-3DC014118112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74AF5B78-BA43-42E0-B444-3DC014118112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED55296A-E3BA-4040-ADB9-05D5643EB34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED55296A-E3BA-4040-ADB9-05D5643EB34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED55296A-E3BA-4040-ADB9-05D5643EB34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED55296A-E3BA-4040-ADB9-05D5643EB34C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74AF5B78-BA43-42E0-B444-3DC014118112} = {79055998-C028-4F1C-8E31-4186FD36EB8D}
+		{ED55296A-E3BA-4040-ADB9-05D5643EB34C} = {79055998-C028-4F1C-8E31-4186FD36EB8D}
+	EndGlobalSection
+EndGlobal
